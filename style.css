@@ -1,0 +1,38 @@
+.para {
+    font-size: 18px;
+    line-height: 1.6;
+}
+.container {
+    margin: 20px 0;
+}
+.button {
+    padding: 10px 15px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn {
+    background-color: green;
+    color: white;
+    padding: 10px;
+}
+.btn2 {
+    background-color: red;
+    padding:10px;
+}
+.resetbutton {
+    background-color: orange;
+    padding: 10px;
+}
+.event-button {
+    background-color: purple;
+    color: white;
+    padding: 10px;
+}
+.submit-button {
+    background-color: teal;
+    color: white;
+    padding: 10px;
+}
