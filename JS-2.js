@@ -20,33 +20,33 @@
 
 // button.addEventListener('click', show);
 
-// Click and stop button
+// // Click and stop button
 
-function stop() {
-    clickbutton.removeEventListener("click", click_);
-    clickbutton.classList.remove("btn");
-}
+// function stop() {
+//     clickbutton.removeEventListener("click", click_);
+//     clickbutton.classList.remove("btn");
+// }
 
-function click_(){
-    clickbutton.classList.add("btn");
-    alert("Button clicked!");
-}
-function reset_(){
-    clickbutton.classList.add("btn");
-    clickbutton.addEventListener("click", click_);
-}
-// stop button
-const stopButton = document.querySelector(".stop-button");
-stopButton.classList.add("btn2");
-stopButton.addEventListener("click",stop)
-// click button
-const clickbutton=document.querySelector(".click-button");
-clickbutton.classList.add("btn");
-clickbutton.addEventListener("click", click_);
-// reset button
-const reset = document.querySelector(".reset-button");
-reset.classList.add("resetbutton");
-reset.addEventListener("click", reset_);
+// function click_(){
+//     clickbutton.classList.add("btn");
+//     alert("Button clicked!");
+// }
+// function reset_(){
+//     clickbutton.classList.add("btn");
+//     clickbutton.addEventListener("click", click_);
+// }
+// // stop button
+// const stopButton = document.querySelector(".stop-button");
+// stopButton.classList.add("btn2");
+// stopButton.addEventListener("click",stop)
+// // click button
+// const clickbutton=document.querySelector(".click-button");
+// clickbutton.classList.add("btn");
+// clickbutton.addEventListener("click", click_);
+// // reset button
+// const reset = document.querySelector(".reset-button");
+// reset.classList.add("resetbutton");
+// reset.addEventListener("click", reset_);
 
 
 // // Event
@@ -60,8 +60,28 @@ reset.addEventListener("click", reset_);
 // });
 
 // form
-const form = document.querySelector("form");
-form.addEventListener("submit-button", (event) => {
-    event.preventDefault();
-    console.log("Form submitted");
+// const form = document.querySelector("form");
+// form.addEventListener("submit-button", (event) => {
+//     event.preventDefault();
+//     console.log("Form submitted");
+// });
+
+const studentName = document.querySelector("#student-name");
+const button = document.querySelector(".btn");
+const list=document.querySelector(".list");
+button.addEventListener("click", () => {
+    // Create an element
+    const li = document.createElement("li");
+    const name = studentName.value;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", () => {
+        list.removeChild(li);
+    });
+    
+    li.textContent = name;
+    li.appendChild(deleteButton);
+    list.appendChild(li);
+    studentName.value = "";
 });
