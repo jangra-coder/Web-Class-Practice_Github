@@ -69,11 +69,12 @@
 const studentName = document.querySelector("#student-name");
 const button = document.querySelector(".btn");
 const list=document.querySelector(".list");
+
 button.addEventListener("click", () => {
     // Create an element
     const li = document.createElement("li");
     const name = studentName.value;
-
+    // Create a delete button
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener("click", () => {
