@@ -86,3 +86,58 @@ button.addEventListener("click", () => {
     list.appendChild(li);
     studentName.value = "";
 });
+
+// // call back function
+// function call_2(){
+//     console.log("Goodbye");
+// }
+// function greet(call_2){
+//     setTimeout(() => {
+//         console.log("Hello");
+//         call_2();
+//     }, 1000);
+// }
+// greet(call_2);
+
+// // Callback hell : Nested call backs in a function
+// console.log("Start");
+// setTimeout(() => {
+//     console.log("Homework Done ...");
+//     console.log("Starting dinner ....");
+//     setTimeout(() => {
+//         console.log("Dinner Done!");
+//         console.log("Getting ready to go out");
+//         setTimeout(() => {
+//             console.log("Going to the playground !");
+//         }, 1000); // after dinner
+//     }, 1500); //dinner time
+// }, 2000); //homework time
+
+// handling callback hell
+function finishHomework(callback){
+    setTimeout(() => {
+        console.log("Homework Done ...");
+        callback();
+    }, 2000);
+}
+
+function startDinner(callback){
+    setTimeout(() => {
+        console.log("Starting dinner ....");
+        callback();
+    }, 1500);
+}
+
+function goOut(){
+    setTimeout(() => {
+        console.log("Going to the playground !");
+    }, 1000);
+}
+
+finishHomework(() => {
+    startDinner(() => {
+        goOut();
+    });
+});
+
+// Promises
