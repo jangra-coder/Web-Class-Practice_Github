@@ -141,3 +141,58 @@ finishHomework(() => {
 });
 
 // Promises
+function doHomework(){
+    const p=new Promise((res,rej)=>{
+        setTimeout(() => {
+            let done =true;
+            if(done){
+                console.log("Homework Complete")
+                res("Homework Done!!");
+            }else{
+                rej("Homework Not Done");
+            }
+        }, 2000);
+    });
+    return p;
+}
+function eatDinner(){
+    const p=new Promise((res,rej)=>{
+        setTimeout(() => {
+            let done =true;
+            if(done){
+                console.log("Dinner Complete")
+                res("Dinner Done!!");
+            }else{
+                rej("Dinner Not Done");
+            }
+        }, 1500);
+    });
+    return p;
+}
+
+function doHomework(){
+    const p=new Promise((res,rej)=>{
+        setTimeout(() => {
+            let done =true;
+            if(done){
+                console.log("Homework Complete")
+                res("Homework Done!!");
+            }else{
+                rej("Homework Not Done");
+            }
+        }, 2000);
+    });
+    return p;
+}
+
+doHomework().then((data)=>{
+    console.log(data);
+    return eatDinner();
+}).then((data)=>{
+    console.log(data);
+    return goToPlayground()
+}).catch((error)=>{
+    console.log(error);
+}).finally(()=>{
+    console.log("Go to sleep");
+});
