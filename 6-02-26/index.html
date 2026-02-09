@@ -1,0 +1,54 @@
+<!-- design.jpeg -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+</head>
+<body>
+    <div class="card">
+        <form class="event-form">
+            <div class="form-group">
+                <label for="event-title">Event Title:</label>
+                <br>
+                <input type="text" id="event-title" name="event-title" required>
+            </div>
+            <div class="form-group">
+                <label for="event-date">Event Date:</label>
+                <br>
+                <input type="date" id="event-date" name="event-date" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <br>
+                <select id="category" name="category" required>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <br>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <button type="submit">Add Event</button>
+
+        </form>
+    </div>
+    <!-- Make a card in which when the user add details of the multiple event will be showed inside a big cards as small cards using grid and flexbox -->
+    <!-- see the design in design.jpeg -->
+    <div class="event-cards-container">
+        <div class="event-card">
+            <h3>Event Title</h3>
+            <p><strong>Date:</strong> Event Date</p>
+            <p><strong>Category:</strong> Event Category</p>
+            <p><strong>Description:</strong> Event Description</p>
+        </div>
+    </div>
+</body>
+</html>
