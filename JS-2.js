@@ -197,38 +197,75 @@
 //     console.log("Go to sleep");
 // });
 
-// Async function and await
-async function orderFood(){
-    return new Promise((res,rej) => {
-        setTimeout(() => {
-            console.log("Food Ordered");
-            res()
-            }, 2000);
-    });
-}
+// // Async function and await
+// async function orderFood(){
+//     return new Promise((res,rej) => {
+//         setTimeout(() => {
+//             console.log("Food Ordered");
+//             res()
+//             }, 2000);
+//     });
+// }
 
-function prepareFood(){
-    return new Promise((res,rej) => {
-        setTimeout(() => {
-            console.log("Food Prepared");
-            res()
-        }, 2000);
-    });
-}
+// function prepareFood(){
+//     return new Promise((res,rej) => {
+//         setTimeout(() => {
+//             console.log("Food Prepared");
+//             res()
+//         }, 2000);
+//     });
+// }
 
-function deliverFood(){
-    return new Promise((res,rej) => {
-        setTimeout(() => {
-            console.log("Food Delivered");
-            res()
-        }, 1500);
-    });
-}
+// function deliverFood(){
+//     return new Promise((res,rej) => {
+//         setTimeout(() => {
+//             console.log("Food Delivered");
+//             res()
+//         }, 1500);
+//     });
+// }
 
-async function foodOrder(){
-    await orderFood()
-    await prepareFood()
-    await deliverFood()
-    console.log("Food is ready to be served");
+// async function foodOrder(){
+//     await orderFood()
+//     await prepareFood()
+//     await deliverFood()
+//     console.log("Food is ready to be served");
+// }
+// foodOrder();
+
+console.log("Its the first Time")
+
+try{
+    let age =19;
+    if(age<18){
+        throw new Error("Not Eligible");
+    }
+    let sample;
+    for (let i=0; i<10; i++){
+        sample = i;
+    }
+    // console.log("Eligible");
+}catch(err){
+    console.log(err)
+    throw new Error("Something Went Wrong");
+}finally{
+    console.log("Finally Block ");
 }
-foodOrder();
+console.log("Its the Last Line")
+
+async function getData(){
+    try{
+        const response = await fetch("https://dummyjson.com/products");
+        const data = await response.json();
+        console.log(response.ok);
+        if (!response.ok) {
+            throw new Error("Something Went Wrong");
+        }
+        data.products.forEach(product => {
+            console.log(product.title);
+        });
+    }catch(err){
+        console.log(err);
+    }
+}
+getData();
