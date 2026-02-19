@@ -233,37 +233,45 @@
 // }
 // foodOrder();
 
-console.log("Its the first Time")
+// console.log("Its the first Time")
 
-try{
-    let age =19;
-    if(age<18){
-        throw new Error("Not Eligible");
-    }
-    let sample;
-    for (let i=0; i<10; i++){
-        sample = i;
-    }
-    // console.log("Eligible");
-}catch(err){
-    console.log(err)
-    throw new Error("Something Went Wrong");
-}finally{
-    console.log("Finally Block ");
-}
-console.log("Its the Last Line")
+// try{
+//     let age =19;
+//     if(age<18){
+//         throw new Error("Not Eligible");
+//     }
+//     let sample;
+//     for (let i=0; i<10; i++){
+//         sample = i;
+//     }
+//     // console.log("Eligible");
+// }catch(err){
+//     console.log(err)
+//     throw new Error("Something Went Wrong");
+// }finally{
+//     console.log("Finally Block ");
+// }
+// console.log("Its the Last Line")
 
+// fetch data from api 
 async function getData(){
     try{
-        const response = await fetch("https://dummyjson.com/products");
-        const data = await response.json();
-        console.log(response.ok);
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: "foo",
+                body: "bar",
+                userId: 1
+            })
+        });        
         if (!response.ok) {
             throw new Error("Something Went Wrong");
         }
-        data.products.forEach(product => {
-            console.log(product.title);
-        });
+        const data = await response.json();
+        console.log(data);
     }catch(err){
         console.log(err);
     }
