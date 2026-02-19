@@ -254,26 +254,60 @@
 // console.log("Its the Last Line")
 
 // fetch data from api 
-async function getData(){
-    try{
-        const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                title: "foo",
-                body: "bar",
-                userId: 1
-            })
-        });        
-        if (!response.ok) {
-            throw new Error("Something Went Wrong");
-        }
-        const data = await response.json();
-        console.log(data);
-    }catch(err){
-        console.log(err);
-    }
+// async function getData(){
+//     try{
+//         const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({
+//                 title: "foo",
+//                 body: "bar",
+//                 userId: 1
+//             })
+//         });        
+//         if (!response.ok) {
+//             throw new Error("Something Went Wrong");
+//         }
+//         const data = await response.json();
+//         console.log(data);
+//     }catch(err){
+//         console.log(err);
+//     }
+// }
+// getData();
+
+// let obj = {
+//     name:"Rahul",
+//     age: 18
+// };
+// localStorage.setItem("user", JSON.stringify(obj));
+// localStorage.setItem("name", "Rajdeep");
+// localStorage.setItem("age", 17);
+// console.log(JSON.parse(localStorage.getItem("user")));
+
+// let obj = {
+//     name:"Rajdeep",
+//     age: 17
+// };
+// sessionStorage.setItem("user", JSON.stringify(obj));
+// sessionStorage.setItem("name", "Rahul");
+// sessionStorage.setItem("age", 18);
+
+// console.log(JSON.parse(sessionStorage.getItem("user")));
+// console.log(sessionStorage.getItem("name"));
+// console.log(sessionStorage.getItem("age"));
+
+// sessionStorage.removeItem("user");
+// sessionStorage.removeItem("name");
+// sessionStorage.removeItem("age");
+
+document.cookie = "user=1; expires=Fri, 20 Feb 2026 23:59:59 UTC;";
+document.cookie = "name=Rajdeep; expires=Fri, 20 Feb 2026 23:59:59 UTC;";
+document.cookie = "age=17; expires=Fri, 20 Feb 2026 23:59:59 UTC;";
+
+async function sample(){
+    await fetch("http://127.0.0.1:5500/index.html");
 }
-getData();
+sample();
