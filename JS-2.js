@@ -303,11 +303,39 @@
 // sessionStorage.removeItem("name");
 // sessionStorage.removeItem("age");
 
-document.cookie = "user=1; expires=Fri, 20 Feb 2026 23:59:59 UTC;";
-document.cookie = "name=Rajdeep; expires=Fri, 20 Feb 2026 23:59:59 UTC;";
-document.cookie = "age=17; expires=Fri, 20 Feb 2026 23:59:59 UTC;";
+// document.cookie = "user=1; expires=Fri, 20 Feb 2026 23:59:59 UTC;";
+// document.cookie = "name=Rajdeep; expires=Fri, 20 Feb 2026 23:59:59 UTC;";
+// document.cookie = "age=17; expires=Fri, 20 Feb 2026 23:59:59 UTC;";
 
-async function sample(){
-    await fetch("http://127.0.0.1:5500/index.html");
-}
-sample();
+// async function sample(){
+//     await fetch("http://127.0.0.1:5500/index.html");
+// }
+// sample();
+
+// function* generate(){
+//     yield 1
+//     yield 2
+//     yield 3
+// }
+
+// const res= generate();
+// console.log(res.next());
+// console.log(res.next());
+// console.log(res.next());
+// console.log(res.next());
+
+// function add(a){
+//     return function(b){
+//         return function(c){
+//             return a+b+c;
+//         }
+//     }
+// }
+
+// const add=a=>b=>c=>a+b+c;
+// console.log(add(2)(3)(4));
+
+// const first=add(34)
+// const second=first(23)
+// const third=second(2)
+// console.log(third)
