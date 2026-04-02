@@ -4,10 +4,11 @@ import Article from './compoonents/Article'
 import './App.css'
 
 function App() {
+  const [title, setTitle] = React.useState('Understanding React Components')
   return (
     <>
       <Topbar />
-      <Article />
+      <Article title={title} />
     </>
   )
 }
