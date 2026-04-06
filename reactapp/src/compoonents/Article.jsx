@@ -4,9 +4,14 @@ class Article extends Component {
         super(props);
         this.state = {
             count: 0
+            
         };
     }
-    handleClick = () => {
+    handleClick_decrement = () => {
+        this.setState({ count: this.state.count - 1 });
+    }
+
+    handleClick_increment = () => {
         this.setState({ count: this.state.count + 1 });
     }
     render() {
@@ -14,7 +19,9 @@ class Article extends Component {
             <div>
                 <h1>Article</h1>
                 <h3>{this.state.count}</h3>
-                <button onClick={this.handleClick}>Increment</button>
+                <button onClick={this.handleClick_increment}>Increment</button>
+                <br />
+                <button onClick={this.handleClick_decrement}>Decrement</button>
                 <h3>{this.props.title}</h3>
                 <p>This is an article about React components.</p>
 
