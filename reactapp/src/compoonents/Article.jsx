@@ -1,33 +1,34 @@
 import React, {Component} from 'react'
-class Article extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            count: 0
-            
-        };
-    }
-    handleClick_decrement = () => {
-        this.setState({ count: this.state.count - 1 });
+
+function Article(props) {
+    const [count, setCount] = React.useState(0);
+
+    const handleClick_increment = () => {
+        setCount(count + 1);
     }
 
-    handleClick_increment = () => {
-        this.setState({ count: this.state.count + 1 });
+    const handleClick_decrement = () => {
+        setCount(count - 1);
     }
-    render() {
-        return (
-            <div>
-                <h1>Article</h1>
-                <h3>{this.state.count}</h3>
-                <button onClick={this.handleClick_increment}>Increment</button>
-                <br />
-                <button onClick={this.handleClick_decrement}>Decrement</button>
-                <h3>{this.props.title}</h3>
-                <p>This is an article about React components.</p>
 
-            </div>
-        )
+    const handleClick_Count_Reset = () => {
+        setCount(0);
     }
+
+    return (
+        <div>
+            <h1>Article</h1>
+            <h3>{count}</h3>
+            <button onClick={handleClick_increment}>Increment</button>
+            <br />
+            <button onClick={handleClick_decrement}>Decrement</button>
+            <br />
+            <button onClick={handleClick_Count_Reset}>Reset</button>
+            <h3>{props.title}</h3>
+            <p>This is an article about React components.</p>
+        </div>
+    )
 }
+
 
 export default Article
