@@ -1,6 +1,6 @@
 import React from 'react'
-import Topbar from './compoonents/Topbar'
-import Article from './compoonents/Article'
+import Topbar from './components/Topbar.jsx'
+import Article from './components/Article.jsx'
 import './App.css'
 import Homepage from './components/Homepage.jsx'
 
